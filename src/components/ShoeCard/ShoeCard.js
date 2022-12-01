@@ -68,21 +68,66 @@ const ShoeCard = ({
   );
 };
 
+const Image = styled.img`
+  width: 100%;
+  transform: scale(1);
+  transform-origin: center 75%;
+  transition: transform 400ms;
+`;
+
+const Flag = styled.div`
+  position: absolute;
+  top: 12px;
+  right: -4px;
+  background: red;
+  height: 32px;
+  line-height: 32px;
+  padding: 0 10px;
+  font-size: ${14 / 18}rem;
+  font-weight: ${WEIGHTS.bold};
+  color: var(--color-white);
+  border-radius: 2px;
+
+  transition: transform 400ms;
+  transition-delay: 100ms;
+`;
+
+const SaleFlag = styled(Flag)`
+  background-color: var(--color-primary);
+`;
+const NewFlag = styled(Flag)`
+  background-color: var(--color-secondary);
+`;
+
+
 const Link = styled.a`
   text-decoration: none;
   color: inherit;
+  
+
+  &:hover ${Image} {
+    transform: scale(1.1);
+    transform-origin: center 75%;
+    transition: transform 150ms;
+  }
+
+  &:hover ${Flag} {
+    transform: translateY(-6px) scale(1.075);
+    transition: transform 150ms;
+    
+  }
 `;
 
-const Wrapper = styled.article``;
-
-const ImageWrapper = styled.div`
+const Wrapper = styled.article`
   position: relative;
 `;
 
-const Image = styled.img`
-  width: 100%;
+const ImageWrapper = styled.div`
+  
+  overflow: hidden;
   border-radius: 16px 16px 4px 4px;
 `;
+
 
 const Row = styled.div`
   font-size: 1rem;
@@ -109,25 +154,7 @@ const SalePrice = styled.span`
   color: var(--color-primary);
 `;
 
-const Flag = styled.div`
-  position: absolute;
-  top: 12px;
-  right: -4px;
-  background: red;
-  height: 32px;
-  line-height: 32px;
-  padding: 0 10px;
-  font-size: ${14 / 18}rem;
-  font-weight: ${WEIGHTS.bold};
-  color: var(--color-white);
-  border-radius: 2px;
-`;
 
-const SaleFlag = styled(Flag)`
-  background-color: var(--color-primary);
-`;
-const NewFlag = styled(Flag)`
-  background-color: var(--color-secondary);
-`;
+
 
 export default ShoeCard;
