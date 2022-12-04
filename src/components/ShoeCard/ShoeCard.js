@@ -69,10 +69,12 @@ const ShoeCard = ({
 };
 
 const Image = styled.img`
+  display: block;
   width: 100%;
   transform: scale(1);
   transform-origin: center 75%;
   transition: transform 400ms;
+  will-change: transform;
 `;
 
 const Flag = styled.div`
